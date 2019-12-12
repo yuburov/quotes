@@ -1,11 +1,9 @@
 const baseUrl = 'http://localhost:8000/api/v1/';
 
 function getFullPath(path) {
-
     path = path.replace(/^\/+|\/+$/g, '');
     path = path.replace(/\/{2,}/g, '/');
     return baseUrl + path + '/';
-
 }
 
 function makeRequest(path, method, auth=true, data=null) {
@@ -19,7 +17,7 @@ function makeRequest(path, method, auth=true, data=null) {
         settings['contentType'] = 'application/json';
     }
     if (auth) {
-        request.headers['Authorization'] = 'Token ' + getToken();
+        settings.headers ={'Authorization': 'Token ' + getToken()};
     }
     return $.ajax(settings);
 }
