@@ -122,8 +122,7 @@ function checkAuth() {
 }
 
 function rateUp(id) {
-    let request = makeRequest('quotes/' +
-        '' + id + '/rate_up', 'post', false);
+    let request = makeRequest('quotes/' + id + '/rate_up', 'post', false);
     request.done(function(data, status, response) {
         console.log('Rated up quote with id ' + id + '.');
         $('#rating_' + id).text("Рейтинг цитаты: " + data.rating);
