@@ -37,6 +37,7 @@ class QuoteViewSet(ModelViewSet):
             return super().get_permissions()
 
 
+
     @action(methods=['post'],detail=True)
     def rate_up(self, *args, **kwargs):
         quote = self.get_object()

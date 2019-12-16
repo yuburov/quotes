@@ -4,4 +4,4 @@ from webapp.models import Quote
 class QuoteSerializer(ModelSerializer):
     class Meta:
         model = Quote
-        fields = ('id', 'text', 'created_at', 'status', 'author', 'raiting')
+        fields = ('id', 'text', 'created_at', 'status','author', 'email', 'raiting')
